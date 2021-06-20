@@ -19,7 +19,7 @@ function App() {
 
   function deleteItem(id) {
     setItems((prevItems) => {
-      return items.filter((item, index) => {
+      return prevItems.filter((item, index) => {
         return index !== id;
       });
     });
