@@ -1,26 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
 function List(props) {
-  let [click, makeClick] = useState(false);
-  function onclick() {
-    // Simpler approach
-    makeClick((prevValue) => {
-      return !prevValue;
-    });
-    // if(!click)
-    //   	{makeClick(true)}
-    // else
-    //   {makeClick(false)};
-  }
   return (
     <div>
-      {" "}
-      <li
-        onClick={onclick}
-        style={{ textDecoration: click ? "line-through" : "none" }}
-      >
-        {props.value}
-      </li>
+      <li onClick={() => props.onCheck(props.id)}>{props.value}</li>
     </div>
   );
 }
